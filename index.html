@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bys Lumière | Velas Aromáticas</title>
+  <meta name="description" content="Bys Lumière — Velas aromáticas artesanais feitas com carinho e dedicação para transformar pequenos momentos em experiências especiais." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Navegação Fixa Editorial -->
+  <header class="site-header" id="top">
+    <div class="header-inner">
+      <a href="#top" class="brand-logo" aria-label="Bys Lumière">
+        BYS LUMIÈRE
+      </a>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Abrir menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="main-nav" id="mainNav">
+        <a href="#inicio" class="nav-link">01. Introdução</a>
+        <a href="#sobre" class="nav-link">02. Sobre mim</a>
+        <a href="#velas" class="nav-link">03. Velas Aromáticas</a>
+        <a href="#como-pedir" class="nav-link">04. Pedidos</a>
+        <a href="#dicas" class="nav-link">05. Dicas</a>
+        <a href="#agradecimentos" class="nav-link">06. História</a>
+      </nav>
+      <a href="#pedido-rapido" class="header-cta" id="cartToggleBtn">
+        <span>Encomendar</span>
+        <span class="cart-badge" id="cartCount">0</span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <!-- 01. HERO / INTRODUÇÃO -->
+    <section class="hero-section watercolor-bg" id="inicio">
+      <div class="watercolor-wash wash-1"></div>
+      <div class="watercolor-wash wash-2"></div>
+      <div class="watercolor-wash wash-3"></div>
+      
+      <div class="editorial-frame hero-frame">
+        <span class="section-tag">Bys Lumière · Artesanal</span>
+        <h1 class="hero-title">
+          B Y S &nbsp; L U M I È R E
+        </h1>
+        <p class="hero-subtitle">Velas Aromáticas</p>
+        <p class="hero-lead">
+          Aconchego, tranquilidade e momentos especiais esculpidos em cada chama.
+        </p>
+        <div class="hero-actions">
+          <a href="#velas" class="btn btn-primary">Conhecer Coleção</a>
+          <a href="#como-pedir" class="btn btn-outline">Como Pedir</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUMÁRIO / AGENDA INTERATIVA -->
+    <section class="agenda-section">
+      <div class="container">
+        <div class="editorial-card agenda-card">
+          <h2 class="display-title">A G E N D A</h2>
+          <div class="pink-ribbon">
+            <span>B y s &nbsp; L u m i è r e</span>
+          </div>
+          <div class="agenda-grid">
+            <a href="#inicio" class="agenda-item">
+              <span class="agenda-name">01. Introdução</span>
+              <span class="agenda-dots"></span>
+              <span class="agenda-page">01</span>
+            </a>
+            <a href="#sobre" class="agenda-item">
+              <span class="agenda-name">02. Sobre mim</span>
+              <span class="agenda-dots"></span>
+              <span class="agenda-page">02</span>
+            </a>
+            <a href="#velas" class="agenda-item">
+              <span class="agenda-name">03. Velas Aromáticas</span>
+              <span class="agenda-dots"></span>
+              <span class="agenda-page">03</span>
+            </a>
+            <a href="#como-pedir" class="agenda-item">
+              <span class="agenda-name">04. Pedidos</span>
+              <span class="agenda-dots"></span>
+              <span class="agenda-page">04</span>
+            </a>
+            <a href="#dicas" class="agenda-item">
+              <span class="agenda-name">05. Dicas e Cuidados</span>
+              <span class="agenda-dots"></span>
+              <span class="agenda-page">05</span>
+            </a>
+            <a href="#agradecimentos" class="agenda-item">
+              <span class="agenda-name">06. Agradecimentos</span>
+              <span class="agenda-dots"></span>
+              <span class="agenda-page">06</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02. SOBRE MIM (ABOUT ME) -->
+    <section class="about-section" id="sobre">
+      <div class="container">
+        <div class="editorial-card about-card">
+          <div class="about-layout">
+            <div class="about-Portrait-wrap">
+              <div class="portrait-frame">
+                <div class="portrait-placeholder" id="creatorPortrait">
+                  <svg viewBox="0 0 200 240" class="candle-illustration" aria-hidden="true">
+                    <defs>
+                      <radialGradient id="flameGlow" cx="50%" cy="30%" r="45%">
+                        <stop offset="0%" stop-color="#f9d9eb" stop-opacity="0.9"/>
+                        <stop offset="100%" stop-color="#ebd2e1" stop-opacity="0"/>
+                      </radialGradient>
+                    </defs>
+                    <circle cx="100" cy="75" r="55" fill="url(#flameGlow)" />
+                    <!-- Chama com brilho estelar -->
+                    <path d="M100 38 C90 58, 86 72, 100 84 C114 72, 110 58, 100 38 Z" fill="#d99bb8" />
+                    <path d="M100 50 C95 62, 94 70, 100 78 C106 70, 105 62, 100 50 Z" fill="#fff5fa" />
+                    <!-- Pavio -->
+                    <line x1="100" y1="84" x2="100" y2="96" stroke="#361325" stroke-width="2" />
+                    <!-- Pote de Vela -->
+                    <rect x="60" y="96" width="80" height="104" rx="8" fill="#fdfbfd" stroke="#361325" stroke-width="1.5" />
+                    <path d="M60 110 Q80 116 100 110 T140 110" fill="none" stroke="#e8cde0" stroke-width="2" />
+                    <!-- Rótulo no pote -->
+                    <rect x="72" y="126" width="56" height="44" rx="2" fill="#eed9e8" stroke="#361325" stroke-width="0.8" />
+                    <text x="100" y="146" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="9" letter-spacing="2" fill="#361325">BYS</text>
+                    <text x="100" y="158" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="7" letter-spacing="1.5" fill="#361325">LUMIÈRE</text>
+                  </svg>
+                  <div class="portrait-caption">
+                    <span>Gabrielly · Fundadora &amp; Artesã</span>
+                    <label for="photoUpload" class="upload-photo-trigger" title="Clique para usar sua foto pessoal">
+                      Trocar pela sua foto
+                    </label>
+                    <input type="file" id="photoUpload" accept="image/*" hidden />
+                  </div>
+                </div>
+                <img id="customPortraitImg" class="custom-portrait-img hidden" alt="Gabrielly - Bys Lumière" />
+              </div>
+            </div>
+
+            <div class="about-content">
+              <h2 class="display-title">
+                AB<span class="star-o">O</span>UT ME
+              </h2>
+              <div class="pink-ribbon ribbon-left">
+                <a href="https://instagram.com/bys.lumiere" target="_blank" rel="noopener noreferrer" class="ig-handle">
+                  Meu perfil: <strong>@bys.lumiere</strong>
+                </a>
+              </div>
+              <div class="about-text">
+                <p>
+                  Me chamo <strong>Gabrielly</strong> e sou apaixonada pelo universo das velas e por tudo que elas representam: aconchego, tranquilidade e momentos especiais.
+                </p>
+                <p>
+                  Encontrei nas velas uma forma de expressar minha criatividade e transformar ideias em peças únicas, feitas com carinho e dedicação. Cada criação é pensada nos mínimos detalhes, buscando proporcionar não apenas um produto, mas uma experiência especial para quem escolhe meu trabalho.
+                </p>
+              </div>
+              <div class="about-highlights">
+                <div class="highlight-pill">✦ Feito à mão</div>
+                <div class="highlight-pill">✦ Cera vegetal &amp; ecológica</div>
+                <div class="highlight-pill">✦ Essências premium</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03. VELAS AROMÁTICAS (CATÁLOGO) -->
+    <section class="candles-section" id="velas">
+      <div class="container">
+        <div class="editorial-card">
+          <div class="section-header">
+            <h2 class="display-title">
+              VELAS AR<span class="star-o">O</span>MÁTICAS
+            </h2>
+            <p class="section-subtitle">Escolha as fragrâncias que vão perfumar e iluminar o seu ambiente</p>
+          </div>
+
+          <div class="candles-grid">
+            <!-- Card 1: Vanilla Comfort (Blush Card) -->
+            <article class="candle-card card-blush" data-candle="Vanilla Comfort">
+              <div class="candle-card-top">
+                <span class="scent-tag">Doce &amp; Aconchegante</span>
+                <span class="scent-icon" aria-hidden="true">✦</span>
+              </div>
+              <h3 class="candle-name">VANILLA C<span class="star-o">O</span>MF<span class="star-o">O</span>RT</h3>
+              <p class="candle-desc">
+                Uma fragrância doce, suave e aconchegante, perfeita para criar uma atmosfera de conforto e tranquilidade. Ideal para momentos de descanso, relaxamento e autocuidado.
+              </p>
+              <div class="scent-notes">
+                <span>Notas: Baunilha cremosa, fava tonka &amp; conforto suave</span>
+              </div>
+              <div class="candle-card-footer">
+                <div class="qty-control">
+                  <button type="button" class="qty-btn" data-action="dec" aria-label="Diminuir quantidade">−</button>
+                  <span class="qty-value" data-qty-for="Vanilla Comfort">0</span>
+                  <button type="button" class="qty-btn" data-action="inc" aria-label="Aumentar quantidade">+</button>
+                </div>
+                <button type="button" class="add-candle-btn" data-add="Vanilla Comfort">
+                  Adicionar ao Pedido
+                </button>
+              </div>
+            </article>
+
+            <!-- Card 2: Brisa de Eucalipto (Outlined Card) -->
+            <article class="candle-card card-outline" data-candle="Brisa de Eucalipto">
+              <div class="candle-card-top">
+                <span class="scent-tag">Fresco &amp; Revigorante</span>
+                <span class="scent-icon" aria-hidden="true">✦</span>
+              </div>
+              <h3 class="candle-name">BRISA DE EUCALIPT<span class="star-o">O</span></h3>
+              <p class="candle-desc">
+                Uma fragrância fresca e revigorante, inspirada na leveza da natureza. Perfeita para trazer uma sensação de frescor, equilíbrio e tranquilidade ao ambiente.
+              </p>
+              <div class="scent-notes">
+                <span>Notas: Folhas de eucalipto, menta suave &amp; brisa verde</span>
+              </div>
+              <div class="candle-card-footer">
+                <div class="qty-control">
+                  <button type="button" class="qty-btn" data-action="dec" aria-label="Diminuir quantidade">−</button>
+                  <span class="qty-value" data-qty-for="Brisa de Eucalipto">0</span>
+                  <button type="button" class="qty-btn" data-action="inc" aria-label="Aumentar quantidade">+</button>
+                </div>
+                <button type="button" class="add-candle-btn" data-add="Brisa de Eucalipto">
+                  Adicionar ao Pedido
+                </button>
+              </div>
+            </article>
+
+            <!-- Card 3: Strawberry Dream (Outlined Card) -->
+            <article class="candle-card card-outline" data-candle="Strawberry Dream">
+              <div class="candle-card-top">
+                <span class="scent-tag">Doce &amp; Delicado</span>
+                <span class="scent-icon" aria-hidden="true">✦</span>
+              </div>
+              <h3 class="candle-name">STRAWBERRY DREAM</h3>
+              <p class="candle-desc">
+                Uma fragrância doce e delicada, inspirada no aroma irresistível dos morangos. Ideal para deixar o ambiente mais alegre, acolhedor e cheio de charme.
+              </p>
+              <div class="scent-notes">
+                <span>Notas: Morangos frescos, frutas vermelhas &amp; toque açucarado</span>
+              </div>
+              <div class="candle-card-footer">
+                <div class="qty-control">
+                  <button type="button" class="qty-btn" data-action="dec" aria-label="Diminuir quantidade">−</button>
+                  <span class="qty-value" data-qty-for="Strawberry Dream">0</span>
+                  <button type="button" class="qty-btn" data-action="inc" aria-label="Aumentar quantidade">+</button>
+                </div>
+                <button type="button" class="add-candle-btn" data-add="Strawberry Dream">
+                  Adicionar ao Pedido
+                </button>
+              </div>
+            </article>
+
+            <!-- Card 4: Passion Glow (Blush Card) -->
+            <article class="candle-card card-blush" data-candle="Passion Glow">
+              <div class="candle-card-top">
+                <span class="scent-tag">Tropical &amp; Leve</span>
+                <span class="scent-icon" aria-hidden="true">✦</span>
+              </div>
+              <h3 class="candle-name">PASSI<span class="star-o">O</span>N GL<span class="star-o">O</span>W</h3>
+              <p class="candle-desc">
+                Uma fragrância tropical, fresca e levemente adocicada, inspirada na essência do maracujá. Perfeita para trazer leveza, frescor e uma sensação agradável de tranquilidade ao ambiente.
+              </p>
+              <div class="scent-notes">
+                <span>Notas: Maracujá doce, brisa tropical &amp; flor de maracujá</span>
+              </div>
+              <div class="candle-card-footer">
+                <div class="qty-control">
+                  <button type="button" class="qty-btn" data-action="dec" aria-label="Diminuir quantidade">−</button>
+                  <span class="qty-value" data-qty-for="Passion Glow">0</span>
+                  <button type="button" class="qty-btn" data-action="inc" aria-label="Aumentar quantidade">+</button>
+                </div>
+                <button type="button" class="add-candle-btn" data-add="Passion Glow">
+                  Adicionar ao Pedido
+                </button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04. COMO PEDIR + FINALIZAR PEDIDO -->
+    <section class="order-section" id="como-pedir">
+      <div class="container">
+        <div class="editorial-card">
+          <h2 class="display-title left-aligned">
+            C<span class="star-o">O</span>M<span class="star-o">O</span> PEDIR ?
+          </h2>
+
+          <div class="steps-list">
+            <div class="step-row">
+              <div class="step-badge">1</div>
+              <div class="step-text">
+                <strong>Escolha sua fragrância:</strong> Conheça nossa coleção e escolha o aroma que mais combina com você e com o ambiente que deseja perfumar.
+              </div>
+            </div>
+
+            <div class="step-row">
+              <div class="step-badge">2</div>
+              <div class="step-text">
+                <strong>Entre em contato:</strong> Envie uma mensagem pelo nosso WhatsApp ou Instagram informando qual vela deseja adquirir e a quantidade.
+              </div>
+            </div>
+
+            <div class="step-row">
+              <div class="step-badge">3</div>
+              <div class="step-text">
+                <strong>Confirme seu pedido:</strong> Após verificar a disponibilidade, informaremos os valores, as formas de pagamento e as opções de entrega ou retirada.
+              </div>
+            </div>
+
+            <div class="step-row">
+              <div class="step-badge">4</div>
+              <div class="step-text">
+                <strong>Aguarde com carinho:</strong> Seu pedido será preparado com toda atenção e dedicação, cuidando de cada detalhe para que sua experiência seja especial.
+              </div>
+            </div>
+          </div>
+
+          <!-- Simulador / Montador de Pedido Direto -->
+          <div class="order-builder" id="pedido-rapido">
+            <div class="order-builder-header">
+              <h3>Monte seu Pedido Agora</h3>
+              <p>Selecione as velas acima ou ajuste abaixo para gerar sua mensagem pronta para o WhatsApp ou Instagram.</p>
+            </div>
+
+            <div class="order-summary-box" id="orderSummaryBox">
+              <p class="empty-order-msg" id="emptyOrderMsg">
+                Nenhuma vela selecionada ainda. Clique em <strong>+</strong> nos aromas acima para adicionar!
+              </p>
+              <ul class="selected-candles-list" id="selectedCandlesList"></ul>
+            </div>
+
+            <div class="order-form-row">
+              <div class="input-group">
+                <label for="customerName">Seu nome (opcional)</label>
+                <input type="text" id="customerName" placeholder="Ex: Maria Clara" />
+              </div>
+              <div class="input-group">
+                <label for="customerNotes">Observações ou dúvidas</label>
+                <input type="text" id="customerNotes" placeholder="Ex: Para presente, consultar frete..." />
+              </div>
+            </div>
+
+            <div class="order-actions">
+              <button type="button" class="btn btn-primary" id="sendWhatsappBtn">
+                Enviar Pedido via WhatsApp
+              </button>
+              <button type="button" class="btn btn-outline" id="copyOrderBtn">
+                Copiar Mensagem para Instagram (@bys.lumiere)
+              </button>
+            </div>
+            <p class="copy-feedback hidden" id="copyFeedback">
+              ✦ Mensagem copiada! Agora é só colar na DM do Instagram @bys.lumiere.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05. DICAS E CUIDADOS -->
+    <section class="care-section" id="dicas">
+      <div class="container">
+        <div class="editorial-card">
+          <h2 class="display-title left-aligned">
+            DICAS E CUIDAD<span class="star-o">O</span>S
+          </h2>
+
+          <div class="care-grid">
+            <div class="care-block">
+              <h3 class="care-title">
+                <span class="care-num">01</span> Antes de acender:
+              </h3>
+              <ul class="care-list">
+                <li>Retire embalagens, etiquetas soltas e outros materiais que não façam parte da vela.</li>
+                <li>Apare o pavio, deixando aproximadamente 5 mm de comprimento.</li>
+                <li>Coloque a vela sobre uma superfície plana, firme e resistente ao calor.</li>
+              </ul>
+            </div>
+
+            <div class="care-block">
+              <h3 class="care-title">
+                <span class="care-num">02</span> Durante o uso:
+              </h3>
+              <ul class="care-list">
+                <li>Nunca deixe a vela acesa sem supervisão.</li>
+                <li>Mantenha longe de cortinas, papéis, tecidos e outros materiais inflamáveis.</li>
+                <li>Evite deixar a vela próxima de crianças, animais de estimação e correntes de ar.</li>
+                <li>Não movimente o recipiente enquanto a cera estiver quente.</li>
+              </ul>
+            </div>
+
+            <div class="care-block">
+              <h3 class="care-title">
+                <span class="care-num">03</span> Após o uso:
+              </h3>
+              <ul class="care-list">
+                <li>Apague a chama com um abafador apropriado, se possível.</li>
+                <li>Aguarde a cera esfriar completamente antes de manusear a vela.</li>
+                <li>Mantenha o pavio centralizado e limpo para a próxima utilização.</li>
+                <li>Guarde sua vela em local fresco, seco e protegido da luz solar direta.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06. AGRADECIMENTOS / HISTÓRIA -->
+    <section class="gratitude-section" id="agradecimentos">
+      <div class="container">
+        <div class="editorial-card gratitude-card">
+          <h2 class="display-title gratitude-title">
+            <span class="star-o">O</span>BRIGADA P<span class="star-o">O</span>R FAZER PARTE<br />
+            DA N<span class="star-o">O</span>SSA HISTÓRIA! <span class="heart-icon">♡</span>
+          </h2>
+
+          <div class="gratitude-body">
+            <p>
+              Cada vela carrega carinho, dedicação e o desejo de transformar pequenos momentos em experiências especiais.
+            </p>
+            <p>
+              Agradecemos de coração por conhecer nossa marca, valorizar nosso trabalho e escolher nossas velas para fazer parte da sua vida.
+            </p>
+            <p>
+              Esperamos que cada fragrância leve aconchego, tranquilidade e boas sensações para seus dias.
+            </p>
+            <p>
+              Mais do que iluminar ambientes, queremos fazer parte de momentos que merecem ser lembrados.
+            </p>
+            <p class="gratitude-closing">
+              Com carinho, agradecemos por sua escolha!
+            </p>
+            <p class="gratitude-sign">
+              ♡ Com amor, Bys Lumière.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07. THANK YOU BANNER FINAL -->
+    <section class="thankyou-banner watercolor-bg">
+      <div class="watercolor-wash wash-1"></div>
+      <div class="watercolor-wash wash-2"></div>
+      <div class="editorial-frame thankyou-frame">
+        <h2 class="thankyou-title">
+          T H A N K &nbsp; Y <span class="star-o">O</span> U
+        </h2>
+        <a href="https://instagram.com/bys.lumiere" target="_blank" rel="noopener noreferrer" class="thankyou-ig">
+          @bys.lumiere
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© 2026 Bys Lumière — Velas Aromáticas Artesanais por Gabrielly.</p>
+      <div class="footer-links">
+        <a href="https://instagram.com/bys.lumiere" target="_blank" rel="noopener noreferrer">Instagram @bys.lumiere</a>
+        <span>·</span>
+        <a href="#top">Voltar ao topo ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
