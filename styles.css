@@ -1,0 +1,975 @@
+:root {
+  --bg-offwhite: #f7f6f7;
+  --bg-card: #faf9fa;
+  --pink-blush: #ecd4e4;
+  --pink-ribbon: #efd7e7;
+  --pink-watercolor-1: #eccce0;
+  --pink-watercolor-2: #e3bad5;
+  --pink-watercolor-3: #f5e2ee;
+  --ink-plum: #320e21;
+  --ink-body: #2c1622;
+  --ink-muted: #684959;
+  --border-dark: #2c1622;
+  --border-white: rgba(255, 255, 255, 0.88);
+  --font-display: 'Cinzel Decorative', 'Cormorant Garamond', Georgia, serif;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-script: 'Great Vibes', cursive;
+  --font-sans: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif;
+  --shadow-soft: 0 14px 36px rgba(50, 14, 33, 0.06);
+  --transition: all 0.28s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--bg-offwhite);
+  color: var(--ink-body);
+  font-family: var(--font-sans);
+  line-height: 1.65;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Estrela delicada dentro do O igual aos slides */
+.star-o {
+  position: relative;
+  display: inline-block;
+}
+
+.star-o::after {
+  content: '✦';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -48%);
+  font-size: 0.3em;
+  color: var(--ink-plum);
+  pointer-events: none;
+  line-height: 1;
+}
+
+/* Header Fixo */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(247, 246, 247, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(50, 14, 33, 0.14);
+}
+
+.header-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0.9rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brand-logo {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.26em;
+  color: var(--ink-plum);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+}
+
+.nav-link {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--ink-body);
+  text-decoration: none;
+  letter-spacing: 0.04em;
+  transition: var(--transition);
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 1px;
+  background: var(--ink-plum);
+  transition: var(--transition);
+}
+
+.nav-link:hover {
+  color: var(--ink-plum);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.header-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--pink-blush);
+  color: var(--ink-plum);
+  border: 1px solid var(--ink-plum);
+  padding: 0.45rem 1rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.header-cta:hover {
+  background: var(--ink-plum);
+  color: #fff;
+}
+
+.cart-badge {
+  background: var(--ink-plum);
+  color: #fff;
+  font-size: 0.7rem;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-cta:hover .cart-badge {
+  background: var(--pink-blush);
+  color: var(--ink-plum);
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+  padding: 4px;
+}
+
+.mobile-menu-btn span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--ink-plum);
+}
+
+/* Fundo Aquarela Rosa (Slides 1 e 8) */
+.watercolor-bg {
+  position: relative;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(244, 217, 234, 0.95) 0%, transparent 52%),
+    radial-gradient(circle at 78% 28%, rgba(226, 181, 211, 0.85) 0%, transparent 55%),
+    radial-gradient(circle at 65% 82%, rgba(219, 173, 204, 0.88) 0%, transparent 48%),
+    radial-gradient(circle at 25% 75%, rgba(247, 226, 239, 0.92) 0%, transparent 55%),
+    linear-gradient(135deg, #f3dceb 0%, #e7c2da 52%, #efd5e6 100%);
+  overflow: hidden;
+}
+
+.watercolor-wash {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(42px);
+  pointer-events: none;
+  opacity: 0.65;
+}
+
+.wash-1 {
+  width: 480px;
+  height: 480px;
+  background: #dfafd0;
+  top: -120px;
+  right: 8%;
+}
+
+.wash-2 {
+  width: 540px;
+  height: 420px;
+  background: #f8e7f2;
+  bottom: -90px;
+  left: 5%;
+}
+
+.wash-3 {
+  width: 360px;
+  height: 360px;
+  background: #d8a3c6;
+  bottom: 10%;
+  right: 22%;
+}
+
+/* 01. HERO */
+.hero-section {
+  min-height: 82vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3.2rem 1.5rem;
+}
+
+.editorial-frame {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1100px;
+  border: 1.5px solid var(--border-white);
+  padding: 5.5rem 2rem;
+  text-align: center;
+}
+
+.section-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--ink-plum);
+  margin-bottom: 1.4rem;
+  opacity: 0.85;
+}
+
+.hero-title {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(2.2rem, 5.6vw, 4.7rem);
+  color: var(--ink-plum);
+  letter-spacing: 0.14em;
+  line-height: 1.15;
+  margin-bottom: 0.25rem;
+}
+
+.hero-subtitle {
+  font-family: var(--font-script);
+  font-size: clamp(2.4rem, 5.2vw, 4.2rem);
+  color: #2b1420;
+  font-weight: 400;
+  margin-top: -0.35rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-lead {
+  max-width: 520px;
+  margin: 0 auto 2.2rem;
+  font-size: 0.98rem;
+  color: var(--ink-body);
+  font-weight: 400;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* Botões */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.9rem;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--transition);
+  border: 1px solid var(--ink-plum);
+}
+
+.btn-primary {
+  background: var(--ink-plum);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #4d1934;
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  background: rgba(255, 255, 255, 0.55);
+  color: var(--ink-plum);
+}
+
+.btn-outline:hover {
+  background: #fff;
+  transform: translateY(-2px);
+}
+
+/* Container & Moldura Editorial dos Slides 2-7 */
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+section {
+  padding: 3.2rem 0;
+}
+
+.editorial-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-dark);
+  padding: clamp(2rem, 5vw, 4.2rem);
+  box-shadow: var(--shadow-soft);
+  position: relative;
+}
+
+.editorial-card::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 5px;
+  background: var(--pink-blush);
+  opacity: 0.7;
+}
+
+.display-title {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(2rem, 4.2vw, 3.5rem);
+  color: var(--ink-plum);
+  letter-spacing: 0.18em;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.display-title.left-aligned {
+  text-align: left;
+  letter-spacing: 0.12em;
+  margin-bottom: 2.2rem;
+}
+
+.pink-ribbon {
+  background: var(--pink-ribbon);
+  max-width: 620px;
+  margin: 1rem auto 2.6rem;
+  padding: 0.5rem 1.4rem;
+  text-align: center;
+  font-size: 0.88rem;
+  letter-spacing: 0.2em;
+  color: var(--ink-body);
+}
+
+.pink-ribbon.ribbon-left {
+  margin: 0.8rem 0 1.8rem;
+  text-align: left;
+  letter-spacing: 0.08em;
+}
+
+/* 02. AGENDA */
+.agenda-grid {
+  max-width: 580px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.05rem;
+}
+
+.agenda-item {
+  display: flex;
+  align-items: baseline;
+  text-decoration: none;
+  color: var(--ink-body);
+  font-size: 1.05rem;
+  transition: var(--transition);
+  padding: 0.25rem 0;
+}
+
+.agenda-item:hover {
+  color: var(--ink-plum);
+  transform: translateX(6px);
+}
+
+.agenda-name {
+  font-weight: 400;
+}
+
+.agenda-dots {
+  flex: 1;
+  border-bottom: 1px dotted rgba(50, 14, 33, 0.25);
+  margin: 0 1rem;
+}
+
+.agenda-page {
+  font-weight: 500;
+  color: var(--ink-plum);
+}
+
+/* 03. SOBRE MIM (ABOUT ME) */
+.about-layout {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 3.2rem;
+  align-items: center;
+}
+
+.portrait-frame {
+  background: var(--pink-watercolor-3);
+  border: 1px solid rgba(50, 14, 33, 0.25);
+  aspect-ratio: 4 / 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.portrait-placeholder {
+  text-align: center;
+  padding: 1.5rem;
+  width: 100%;
+}
+
+.candle-illustration {
+  width: 155px;
+  height: auto;
+  margin-bottom: 0.75rem;
+}
+
+.portrait-caption {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+}
+
+.upload-photo-trigger {
+  display: inline-block;
+  margin: 0 auto;
+  font-size: 0.72rem;
+  color: var(--ink-plum);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.custom-portrait-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.about-content .display-title {
+  text-align: left;
+  letter-spacing: 0.1em;
+}
+
+.ig-handle {
+  color: var(--ink-plum);
+  text-decoration: none;
+  font-size: 0.92rem;
+}
+
+.ig-handle:hover {
+  text-decoration: underline;
+}
+
+.about-text p {
+  margin-bottom: 1.15rem;
+  font-size: 0.98rem;
+  color: var(--ink-body);
+}
+
+.about-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 1.4rem;
+}
+
+.highlight-pill {
+  background: var(--pink-ribbon);
+  color: var(--ink-plum);
+  padding: 0.35rem 0.9rem;
+  font-size: 0.76rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+/* 04. VELAS AROMÁTICAS (GRID 2x2) */
+.section-header {
+  text-align: center;
+  margin-bottom: 2.6rem;
+}
+
+.section-subtitle {
+  margin-top: 0.6rem;
+  font-size: 0.92rem;
+  color: var(--ink-muted);
+}
+
+.candles-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.8rem;
+}
+
+.candle-card {
+  padding: 2.1rem 2rem;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: var(--transition);
+}
+
+.candle-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(50, 14, 33, 0.08);
+}
+
+/* Alternância exata do Slide 4: Rosa e Borda Fina */
+.card-blush {
+  background: var(--pink-blush);
+  border: 1px solid transparent;
+}
+
+.card-outline {
+  background: var(--bg-card);
+  border: 1.2px solid var(--border-dark);
+}
+
+.candle-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.scent-tag {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--ink-muted);
+  font-weight: 600;
+}
+
+.scent-icon {
+  color: var(--ink-plum);
+  font-size: 0.95rem;
+}
+
+.candle-name {
+  font-family: var(--font-serif);
+  font-size: 1.55rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  color: var(--ink-plum);
+  margin-bottom: 0.9rem;
+}
+
+.candle-desc {
+  font-size: 0.93rem;
+  color: var(--ink-body);
+  margin-bottom: 1.1rem;
+  line-height: 1.65;
+}
+
+.scent-notes {
+  font-size: 0.78rem;
+  font-style: italic;
+  color: var(--ink-muted);
+  margin-bottom: 1.4rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(50, 14, 33, 0.12);
+}
+
+.candle-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.qty-control {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--ink-plum);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.qty-btn {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  color: var(--ink-plum);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.qty-btn:hover {
+  background: var(--ink-plum);
+  color: #fff;
+}
+
+.qty-value {
+  min-width: 28px;
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.add-candle-btn {
+  flex: 1;
+  min-width: 145px;
+  padding: 0.55rem 0.9rem;
+  background: var(--ink-plum);
+  color: #fff;
+  border: 1px solid var(--ink-plum);
+  font-family: var(--font-sans);
+  font-size: 0.74rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.add-candle-btn:hover {
+  background: transparent;
+  color: var(--ink-plum);
+}
+
+/* 05. COMO PEDIR (Slide 5) */
+.steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.step-row {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.step-badge {
+  width: 44px;
+  height: 44px;
+  background: var(--pink-blush);
+  color: var(--ink-plum);
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-text {
+  font-size: 0.98rem;
+  color: var(--ink-body);
+}
+
+/* Montador de Pedido */
+.order-builder {
+  background: rgba(236, 212, 228, 0.35);
+  border: 1px solid rgba(50, 14, 33, 0.22);
+  padding: 2rem;
+}
+
+.order-builder-header h3 {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  color: var(--ink-plum);
+  letter-spacing: 0.06em;
+  margin-bottom: 0.25rem;
+}
+
+.order-builder-header p {
+  font-size: 0.88rem;
+  color: var(--ink-muted);
+  margin-bottom: 1.3rem;
+}
+
+.order-summary-box {
+  background: #fff;
+  border: 1px solid rgba(50, 14, 33, 0.15);
+  padding: 1.1rem 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.empty-order-msg {
+  font-size: 0.88rem;
+  color: var(--ink-muted);
+}
+
+.selected-candles-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.selected-candles-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.92rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px dashed rgba(50, 14, 33, 0.14);
+}
+
+.selected-candles-list li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.order-form-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.input-group label {
+  font-size: 0.76rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-plum);
+}
+
+.input-group input {
+  padding: 0.7rem 0.9rem;
+  border: 1px solid rgba(50, 14, 33, 0.25);
+  background: #fff;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  color: var(--ink-body);
+}
+
+.input-group input:focus {
+  outline: 1px solid var(--ink-plum);
+}
+
+.order-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.copy-feedback {
+  margin-top: 0.9rem;
+  font-size: 0.85rem;
+  color: var(--ink-plum);
+  font-weight: 500;
+}
+
+/* 06. DICAS E CUIDADOS (Slide 6) */
+.care-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.care-block {
+  background: #fff;
+  border: 1px solid rgba(50, 14, 33, 0.14);
+  padding: 1.6rem;
+}
+
+.care-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--ink-plum);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.care-num {
+  background: var(--pink-blush);
+  color: var(--ink-plum);
+  font-family: var(--font-serif);
+  font-size: 0.9rem;
+  padding: 0.15rem 0.5rem;
+}
+
+.care-list {
+  padding-left: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  font-size: 0.9rem;
+}
+
+/* 07. AGRADECIMENTOS (Slide 7) */
+.gratitude-card {
+  text-align: center;
+}
+
+.gratitude-title {
+  font-size: clamp(1.65rem, 3.6vw, 2.75rem);
+  letter-spacing: 0.12em;
+  margin-bottom: 2rem;
+}
+
+.heart-icon {
+  font-family: var(--font-serif);
+  font-weight: 300;
+}
+
+.gratitude-body {
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+  font-size: 1.02rem;
+}
+
+.gratitude-closing {
+  margin-top: 0.6rem;
+  font-weight: 500;
+}
+
+.gratitude-sign {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  color: var(--ink-plum);
+  font-weight: 500;
+}
+
+/* 08. THANK YOU BANNER (Slide 8) */
+.thankyou-banner {
+  padding: 4rem 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.thankyou-frame {
+  padding: 4rem 2rem;
+}
+
+.thankyou-title {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-size: clamp(2rem, 5vw, 4rem);
+  letter-spacing: 0.22em;
+  color: var(--ink-plum);
+  margin-bottom: 0.75rem;
+}
+
+.thankyou-ig {
+  color: var(--ink-plum);
+  text-decoration: none;
+  font-size: 0.95rem;
+  letter-spacing: 0.15em;
+}
+
+.thankyou-ig:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+.site-footer {
+  background: #f0e6ec;
+  border-top: 1px solid rgba(50, 14, 33, 0.15);
+  padding: 1.6rem 0;
+  font-size: 0.82rem;
+  color: var(--ink-muted);
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.footer-links a {
+  color: var(--ink-plum);
+  text-decoration: none;
+}
+
+/* Responsividade */
+@media (max-width: 920px) {
+  .about-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .about-Portrait-wrap {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .candles-grid,
+  .care-grid,
+  .order-form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .main-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--bg-offwhite);
+    flex-direction: column;
+    padding: 1.2rem;
+    border-bottom: 1px solid rgba(50, 14, 33, 0.15);
+    display: none;
+  }
+
+  .main-nav.open {
+    display: flex;
+  }
+
+  .mobile-menu-btn {
+    display: flex;
+  }
+}
+
