@@ -10,7 +10,7 @@
   --ink-body: #2c1622;
   --ink-muted: #684959;
   --border-dark: #2c1622;
-  --border-white: rgba(255, 255, 255, 0.88);
+  --border-white: rgba(255, 255, 255, 0.92);
   --font-display: 'Cinzel Decorative', 'Cormorant Garamond', Georgia, serif;
   --font-serif: 'Cormorant Garamond', Georgia, serif;
   --font-script: 'Great Vibes', cursive;
@@ -62,7 +62,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(247, 246, 247, 0.92);
+  background: rgba(247, 246, 247, 0.94);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(50, 14, 33, 0.14);
 }
@@ -177,24 +177,23 @@ body {
   background: var(--ink-plum);
 }
 
-/* Fundo Aquarela Rosa (Slides 1 e 8) */
+/* Fundo Aquarela Rosa Original extraído dos Slides 1 e 8 */
 .watercolor-bg {
   position: relative;
-  background:
-    radial-gradient(circle at 18% 22%, rgba(244, 217, 234, 0.95) 0%, transparent 52%),
-    radial-gradient(circle at 78% 28%, rgba(226, 181, 211, 0.85) 0%, transparent 55%),
-    radial-gradient(circle at 65% 82%, rgba(219, 173, 204, 0.88) 0%, transparent 48%),
-    radial-gradient(circle at 25% 75%, rgba(247, 226, 239, 0.92) 0%, transparent 55%),
-    linear-gradient(135deg, #f3dceb 0%, #e7c2da 52%, #efd5e6 100%);
+  background-image:
+    linear-gradient(rgba(243, 220, 235, 0.25), rgba(235, 204, 224, 0.25)),
+    url('assets/watercolor-bg.jpg');
+  background-size: cover;
+  background-position: center;
   overflow: hidden;
 }
 
 .watercolor-wash {
   position: absolute;
   border-radius: 50%;
-  filter: blur(42px);
+  filter: blur(48px);
   pointer-events: none;
-  opacity: 0.65;
+  opacity: 0.35;
 }
 
 .wash-1 {
@@ -235,19 +234,20 @@ body {
   z-index: 2;
   width: 100%;
   max-width: 1100px;
-  border: 1.5px solid var(--border-white);
+  border: 1.8px solid var(--border-white);
   padding: 5.5rem 2rem;
   text-align: center;
+  background: rgba(255, 245, 251, 0.14);
 }
 
 .section-tag {
   display: inline-block;
-  font-size: 0.75rem;
+  font-size: 0.74rem;
   letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--ink-plum);
-  margin-bottom: 1.4rem;
-  opacity: 0.85;
+  margin-bottom: 1.1rem;
+  font-weight: 600;
 }
 
 .hero-title {
@@ -313,7 +313,7 @@ body {
 }
 
 .btn-outline {
-  background: rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.72);
   color: var(--ink-plum);
 }
 
@@ -330,13 +330,13 @@ body {
 }
 
 section {
-  padding: 3.2rem 0;
+  padding: 2.8rem 0;
 }
 
 .editorial-card {
   background: var(--bg-card);
   border: 1px solid var(--border-dark);
-  padding: clamp(2rem, 5vw, 4.2rem);
+  padding: clamp(2rem, 5vw, 4rem);
   box-shadow: var(--shadow-soft);
   position: relative;
 }
@@ -349,13 +349,13 @@ section {
   bottom: -6px;
   height: 5px;
   background: var(--pink-blush);
-  opacity: 0.7;
+  opacity: 0.85;
 }
 
 .display-title {
   font-family: var(--font-serif);
   font-weight: 400;
-  font-size: clamp(2rem, 4.2vw, 3.5rem);
+  font-size: clamp(2rem, 4.2vw, 3.4rem);
   color: var(--ink-plum);
   letter-spacing: 0.18em;
   text-align: center;
@@ -425,7 +425,7 @@ section {
   color: var(--ink-plum);
 }
 
-/* 03. SOBRE MIM (ABOUT ME) */
+/* 03. SOBRE MIM (Com foto real da Gabrielly) */
 .about-layout {
   display: grid;
   grid-template-columns: 340px 1fr;
@@ -433,50 +433,37 @@ section {
   align-items: center;
 }
 
+.about-portrait-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
 .portrait-frame {
   background: var(--pink-watercolor-3);
   border: 1px solid rgba(50, 14, 33, 0.25);
   aspect-ratio: 4 / 5;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   overflow: hidden;
-  position: relative;
+  box-shadow: 0 10px 26px rgba(50, 14, 33, 0.09);
 }
 
-.portrait-placeholder {
-  text-align: center;
-  padding: 1.5rem;
-  width: 100%;
-}
-
-.candle-illustration {
-  width: 155px;
-  height: auto;
-  margin-bottom: 0.75rem;
-}
-
-.portrait-caption {
-  display: flex;
-  flex-direction: column;
-  gap: 0.45rem;
-  font-size: 0.8rem;
-  color: var(--ink-muted);
-}
-
-.upload-photo-trigger {
-  display: inline-block;
-  margin: 0 auto;
-  font-size: 0.72rem;
-  color: var(--ink-plum);
-  text-decoration: underline;
-  cursor: pointer;
-}
-
-.custom-portrait-img {
+.creator-photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.portrait-frame:hover .creator-photo {
+  transform: scale(1.03);
+}
+
+.portrait-credit {
+  text-align: center;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: var(--ink-muted);
 }
 
 .hidden {
@@ -520,16 +507,158 @@ section {
   letter-spacing: 0.04em;
 }
 
-/* 04. VELAS AROMÁTICAS (GRID 2x2) */
+/* QUIZ DE AROMA IDEAL (Melhoria 4) */
+.quiz-card {
+  background: linear-gradient(180deg, #faf9fa 0%, #f5eaf1 100%);
+}
+
+.quiz-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.quiz-title {
+  font-size: clamp(1.6rem, 3.2vw, 2.5rem);
+  letter-spacing: 0.12em;
+}
+
+.quiz-options {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.1rem;
+}
+
+.quiz-option-btn {
+  background: #fff;
+  border: 1px solid rgba(50, 14, 33, 0.22);
+  padding: 1.35rem 1.1rem;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  font-family: var(--font-sans);
+  transition: var(--transition);
+}
+
+.quiz-option-btn:hover,
+.quiz-option-btn.selected {
+  background: var(--pink-blush);
+  border-color: var(--ink-plum);
+  transform: translateY(-3px);
+}
+
+.quiz-emoji {
+  font-size: 1.45rem;
+}
+
+.quiz-option-btn strong {
+  font-size: 0.9rem;
+  color: var(--ink-plum);
+}
+
+.quiz-option-btn span {
+  font-size: 0.8rem;
+  color: var(--ink-body);
+  line-height: 1.45;
+}
+
+.quiz-result {
+  margin-top: 1.8rem;
+  background: #fff;
+  border: 1.2px solid var(--ink-plum);
+  padding: 1.8rem;
+  text-align: center;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.quiz-match-badge {
+  display: inline-block;
+  background: var(--pink-blush);
+  color: var(--ink-plum);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.8rem;
+  margin-bottom: 0.6rem;
+}
+
+.quiz-result h3 {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  letter-spacing: 0.12em;
+  color: var(--ink-plum);
+  margin-bottom: 0.45rem;
+}
+
+.quiz-result p {
+  max-width: 580px;
+  margin: 0 auto 1.2rem;
+  font-size: 0.92rem;
+}
+
+/* 04. VELAS AROMÁTICAS (GRID 2x2 + SELETOR DE TAMANHO) */
 .section-header {
   text-align: center;
-  margin-bottom: 2.6rem;
+  margin-bottom: 2.4rem;
 }
 
 .section-subtitle {
   margin-top: 0.6rem;
   font-size: 0.92rem;
   color: var(--ink-muted);
+}
+
+.size-selector-bar {
+  margin-top: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  background: #f2e4ec;
+  padding: 0.65rem 1.1rem;
+  border: 1px solid rgba(50, 14, 33, 0.16);
+}
+
+.size-bar-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-plum);
+}
+
+.size-pills {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.size-pill {
+  background: #fff;
+  border: 1px solid rgba(50, 14, 33, 0.25);
+  color: var(--ink-body);
+  padding: 0.45rem 0.9rem;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.size-pill.active,
+.size-pill:hover {
+  background: var(--ink-plum);
+  color: #fff;
+  border-color: var(--ink-plum);
 }
 
 .candles-grid {
@@ -539,7 +668,7 @@ section {
 }
 
 .candle-card {
-  padding: 2.1rem 2rem;
+  padding: 2rem;
   border-radius: 4px;
   display: flex;
   flex-direction: column;
@@ -578,18 +707,32 @@ section {
   font-weight: 600;
 }
 
-.scent-icon {
+.candle-price-tag {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(50, 14, 33, 0.2);
   color: var(--ink-plum);
-  font-size: 0.95rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+}
+
+.candle-title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.85rem;
+}
+
+.candle-mini-icon {
+  flex-shrink: 0;
 }
 
 .candle-name {
   font-family: var(--font-serif);
-  font-size: 1.55rem;
+  font-size: 1.5rem;
   font-weight: 500;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.11em;
   color: var(--ink-plum);
-  margin-bottom: 0.9rem;
 }
 
 .candle-desc {
@@ -600,12 +743,20 @@ section {
 }
 
 .scent-notes {
-  font-size: 0.78rem;
-  font-style: italic;
+  font-size: 0.79rem;
   color: var(--ink-muted);
-  margin-bottom: 1.4rem;
+  margin-bottom: 1.35rem;
   padding-top: 0.75rem;
   border-top: 1px solid rgba(50, 14, 33, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.burn-badge {
+  font-style: italic;
+  color: var(--ink-plum);
+  font-weight: 500;
 }
 
 .candle-card-footer {
@@ -620,12 +771,12 @@ section {
   display: inline-flex;
   align-items: center;
   border: 1px solid var(--ink-plum);
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.75);
 }
 
 .qty-btn {
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
   border: none;
   background: transparent;
   color: var(--ink-plum);
@@ -640,16 +791,16 @@ section {
 }
 
 .qty-value {
-  min-width: 28px;
+  min-width: 30px;
   text-align: center;
-  font-size: 0.85rem;
+  font-size: 0.86rem;
   font-weight: 600;
 }
 
 .add-candle-btn {
   flex: 1;
   min-width: 145px;
-  padding: 0.55rem 0.9rem;
+  padding: 0.6rem 0.9rem;
   background: var(--ink-plum);
   color: #fff;
   border: 1px solid var(--ink-plum);
@@ -700,11 +851,20 @@ section {
   color: var(--ink-body);
 }
 
-/* Montador de Pedido */
+/* Montador de Pedido + Presente */
 .order-builder {
   background: rgba(236, 212, 228, 0.35);
   border: 1px solid rgba(50, 14, 33, 0.22);
   padding: 2rem;
+}
+
+.order-builder-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
 }
 
 .order-builder-header h3 {
@@ -712,20 +872,27 @@ section {
   font-size: 1.6rem;
   color: var(--ink-plum);
   letter-spacing: 0.06em;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.2rem;
 }
 
 .order-builder-header p {
   font-size: 0.88rem;
   color: var(--ink-muted);
-  margin-bottom: 1.3rem;
+}
+
+.order-total-pill {
+  background: #fff;
+  border: 1px solid var(--ink-plum);
+  padding: 0.55rem 1rem;
+  font-size: 0.88rem;
+  color: var(--ink-plum);
 }
 
 .order-summary-box {
   background: #fff;
   border: 1px solid rgba(50, 14, 33, 0.15);
   padding: 1.1rem 1.25rem;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.15rem;
 }
 
 .empty-order-msg {
@@ -737,7 +904,7 @@ section {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.55rem;
 }
 
 .selected-candles-list li {
@@ -745,7 +912,7 @@ section {
   align-items: center;
   justify-content: space-between;
   font-size: 0.92rem;
-  padding-bottom: 0.4rem;
+  padding-bottom: 0.45rem;
   border-bottom: 1px dashed rgba(50, 14, 33, 0.14);
 }
 
@@ -754,9 +921,54 @@ section {
   padding-bottom: 0;
 }
 
+/* Caixa de Presente */
+.gift-option-box {
+  background: #fff9fc;
+  border: 1px dashed rgba(50, 14, 33, 0.3);
+  padding: 1rem 1.2rem;
+  margin-bottom: 1.25rem;
+}
+
+.gift-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.88rem;
+  cursor: pointer;
+  color: var(--ink-body);
+}
+
+.gift-checkbox-label input[type='checkbox'] {
+  width: 17px;
+  height: 17px;
+  accent-color: var(--ink-plum);
+}
+
+.gift-message-wrap {
+  margin-top: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.gift-message-wrap label {
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--ink-plum);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.gift-message-wrap input {
+  padding: 0.65rem 0.9rem;
+  border: 1px solid rgba(50, 14, 33, 0.25);
+  font-family: var(--font-sans);
+  font-size: 0.86rem;
+}
+
 .order-form-row {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   margin-bottom: 1.25rem;
 }
@@ -768,14 +980,15 @@ section {
 }
 
 .input-group label {
-  font-size: 0.76rem;
+  font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: var(--ink-plum);
 }
 
-.input-group input {
+.input-group input,
+.input-group select {
   padding: 0.7rem 0.9rem;
   border: 1px solid rgba(50, 14, 33, 0.25);
   background: #fff;
@@ -784,7 +997,8 @@ section {
   color: var(--ink-body);
 }
 
-.input-group input:focus {
+.input-group input:focus,
+.input-group select:focus {
   outline: 1px solid var(--ink-plum);
 }
 
@@ -908,6 +1122,50 @@ section {
   text-decoration: underline;
 }
 
+/* Botão Flutuante (Melhoria 5) */
+.floating-bag-btn {
+  position: fixed;
+  right: 1.4rem;
+  bottom: 1.4rem;
+  z-index: 99;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--ink-plum);
+  color: #fff;
+  border: 1px solid var(--pink-blush);
+  padding: 0.75rem 1.25rem;
+  text-decoration: none;
+  box-shadow: 0 10px 28px rgba(50, 14, 33, 0.28);
+  transition: var(--transition);
+}
+
+.floating-bag-btn:hover {
+  transform: translateY(-3px);
+  background: #4b1732;
+}
+
+.floating-bag-icon {
+  font-size: 1.3rem;
+}
+
+.floating-bag-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.floating-bag-text strong {
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.floating-bag-text small {
+  font-size: 0.72rem;
+  color: var(--pink-blush);
+}
+
 /* Footer */
 .site-footer {
   background: #f0e6ec;
@@ -936,14 +1194,18 @@ section {
 }
 
 /* Responsividade */
-@media (max-width: 920px) {
+@media (max-width: 960px) {
   .about-layout {
     grid-template-columns: 1fr;
   }
 
-  .about-Portrait-wrap {
-    max-width: 320px;
+  .about-portrait-wrap {
+    max-width: 310px;
     margin: 0 auto;
+  }
+
+  .quiz-options {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .candles-grid,
@@ -973,3 +1235,8 @@ section {
   }
 }
 
+@media (max-width: 560px) {
+  .quiz-options {
+    grid-template-columns: 1fr;
+  }
+}
